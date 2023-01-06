@@ -1,8 +1,8 @@
-export interface IGetWorkersRequestBody {
+export interface IPostWorkerRequestBody {
     readonly workerId: string;
 }
 
-export interface IGetWorkersResponseBody {
+export interface IPostWorkerResponseBody {
     readonly _id: string;
     readonly name: string;
     readonly someOptionalProperty?: string;

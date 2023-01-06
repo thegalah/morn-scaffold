@@ -1,6 +1,6 @@
 import { AbstractApiClient } from "../AbstractApiClient/AbstractApiClient";
-import { GetWorker } from "./GetWorkers/GetWorkers";
+import { PostWorkerRoute } from "./PostWorker/PostWorker";
 
 export class LaForge extends AbstractApiClient {
-    public readonly GetWorker = GetWorker;
+    public readonly PostWorker = PostWorkerRoute(this.bearerToken, this.apiHost);
 }
