@@ -3,10 +3,10 @@ import { getAxiosRequestConfig } from "../../AbstractApiClient/getAxiosRequestCo
 import { IPostWorkerRequestBody, IPostWorkerResponseBody } from "./PostWorker.jsonschema";
 
 export const PostWorkerRoute = (token: string, apiHost: string) => {
-    async (payload: IPostWorkerRequestBody): Promise<ISchema["#/definitions/IGetWorkersResponseBody"]> => {
+    return async (payload: IPostWorkerRequestBody): Promise<IPostWorkerResponseBody> => {
         const config = getAxiosRequestConfig(token);
         const request = await axios.post(`${apiHost}/submission`, payload, config);
-        assertValidSchema(request.data, "#/definitions/IGetWorkersResponseBody");
+        assertValidSchema(request.data, "#/definitions/IPostWorkerResponseBody");
         return request;
     };
 };
